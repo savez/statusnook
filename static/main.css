@@ -1,23 +1,74 @@
+:root{
+    color-scheme: light dark;
+
+    /* dark */
+    --dark-bg-color: #212121;
+    --dark-color-label: #BAABA8;
+    --dark-color-status-header: #FFFFFF;
+    --dark-color-checkbox-group-label: #969696;
+    --dark-color: #ffffff;
+    --dark-color-admin-nav-header: #b2b2b2;
+    --dark-color-admin-nav-header2: #737272;
+    --dark-color-service-row-span: #FFFFFF;
+    --dark-color-index-alert-container: #c1a300;
+    --dark-color-index-alert-container2:#636363;
+    --dark-color-index-alert-container3:#cecdcd;
+    --light-color-success-modal: #BAABA8;
+    --dark-color-history-container-h2: #c9c9c9;
+    --dark-color-history-container-span: #FFFFFF;
+    --dark-color-history-container-h3: #c9c9c9;
+    --dark-color-admin-index-link-container-a: #969696;
+    --dark-color-auth-dialog: #BAABA8;
+    --dark-bg-color-entity-empty-state: #2b2b2b;
+    --dark-bg-color-entity-empty-state-span: #c7c6c6;
+    --dark-bg-color-entity-empty-state-action: #5c5553;
+    --dark-color-services-container: #969696;
+    
+    /* light */
+    --light-bg-color: #f1ecec;
+    --light-color-label: #544e4d;
+    --light-color-checkbox-group-label: #606060;
+    --light-color-status-header: #000000;
+    --light-color-nav: #1F1F1F;
+    --light-color-admin-nav-header: #424242;
+    --light-color-admin-nav-header2: #FBFBFB;
+    --light-color-service-row-span: #171717;
+    --light-color-index-alert-container: #818181;
+    --light-color-index-alert-container2: #818181;
+    --light-color-index-alert-container3: #292929;
+    --light-color-success-modal: #464646;
+    --light-color-history-container-h2: #424242;
+    --light-color-history-container-span: #000000;
+    --light-color-history-container-h3: #464646;
+    --light-color-admin-index-link-container-a: #606060;
+    --light-color-auth-dialog: #464646;
+    --light-bg-color-entity-empty-state: #fefefe;
+    --light-bg-color-entity-empty-state-span: #424242;
+    --light-bg-color-entity-empty-state-action: #464646;
+    --light-color-services-container: #606060;
+    
+}
+
 @font-face {
     font-family: Figtree;
     src: url("/static/fonts/figtree-regular.ttf");
-    font-weight: 400;
+    font-weight: 600;
 }
 
 @font-face {
     font-family: Figtree;
     src: url("/static/fonts/figtree-medium.ttf");
-    font-weight: 500;
+    font-weight: 700;
 }
 
 @font-face {
     font-family: Figtree;
     src: url("/static/fonts/figtree-semibold.ttf");
-    font-weight: 600;
+    font-weight: 800;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 82.5%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
@@ -26,6 +77,7 @@ html {
 body {
     height: 100%;
     margin: 0;
+	background-color: light-dark(var(--light-bg-color),var(--dark-bg-color));
 }
 
 body, button, textarea {
@@ -65,6 +117,7 @@ textarea {
 label {
     font-size: 1.4rem;
     font-weight: 500;
+    color: light-dark(var(--light-color-label),var(--dark-color-label));
 }
 
 .banner {
@@ -179,7 +232,7 @@ label {
     margin-top: 1rem;
     display: flex;
     align-items: center;
-    color: #606060;
+    color: light-dark(var(--light-color-checkbox-group-label),var(--dark-color-checkbox-group-label));
     font-weight: 400;
 }
 
@@ -298,9 +351,9 @@ label {
 
 .status-header > div:first-of-type > a {
     margin: 0;
-    color: #000000;
-    font-size: 2rem;
-    font-weight: 600;
+    color: light-dark(var(--light-color-status-header),var(--dark-color-status-header));
+    font-size: 2.5rem;
+    font-weight: 900;
     text-decoration: none;
 }
 
@@ -501,7 +554,7 @@ label {
 .nav > a {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #969696;
+        color: light-dark(#606060,#969696); 
     margin-left: 3.6rem;
     text-decoration: none;
 }
@@ -512,7 +565,7 @@ label {
 }
 
 .nav > a.active-nav {
-    color: #1F1F1F;
+    color: light-dark(var(--light-color-nav),var(--dark-color-nav));
 }
 
 .nav > a:first-of-type {
@@ -524,7 +577,7 @@ label {
 }
 
 .nav svg {
-    color: #969696;
+        color: light-dark(#606060,#969696); 
     width: 1.2rem;
 }
 
@@ -536,9 +589,9 @@ label {
 }
 
 .admin-nav-header h2 {
-    color: #424242;
-    font-size: 1.8rem;
-    font-weight: 600;
+    color: light-dark(var(--light-color-admin-nav-header),var(--dark-color-admin-nav-header));
+    font-size: 2rem;
+    font-weight: 700;
     margin: 0;
 }
 
@@ -557,20 +610,20 @@ label {
 .admin-nav-header > div:first-of-type svg {
     width: 2rem;
     height: 2rem;
-    color: #595959;
+    color: #cecccc;
 }
 
 .admin-nav-header > div:nth-child(2) svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.4rem;
+    height: 1.4rem;
     padding: 0.4rem;
-    color: #595959;
+    color: #d9d7d7;
 }
 
 .admin-nav-header > div:nth-child(2) > a {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
-    background: #FBFBFB;
+    background: light-dark(var(--light-color-admin-nav-header2),var(--dark-color-admin-nav-header2));
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     display: flex;
 }
@@ -586,7 +639,7 @@ label {
 }
 
 .admin-nav-header .menu {
-    margin-left: 3.6rem;
+    margin-left: 3.4rem;
 }
 /* admin navigation header */
 
@@ -693,17 +746,17 @@ label {
 .service-row span:first-of-type {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #171717;
+    color: light-dark(var(--light-color-service-row-span),var(--dark-color-service-row-span));
 }
 
 .service-row span:nth-of-type(2) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #818181;
     margin-top: 0.5rem;
 }
 
 .service-row svg {
-    width: 2.0rem;
+    width: 3.0rem;
     color: #6BE795;
 }
 
@@ -733,12 +786,12 @@ label {
 .index-alert-container .index-alert-container__header div span {
     font-weight: 600;
     font-size: 1.8rem;
-    color: #171717;
+    color: light-dark(var(--light-color-service-row-span),var(--dark-color-service-row-span));
 }
 
 .index-alert-container .index-alert-container__header > span {
-    font-size: 1.4rem;
-    color: #818181;
+    font-size: 1.2rem;
+    color: light-dark(var(--light-color-index-alert-container),var(--dark-color-index-alert-container));
 }
 
 .index-alert-container .index-alert-container__row {
@@ -748,14 +801,14 @@ label {
 }
 
 .index-alert-container .index-alert-container__row span:first-of-type {
-    font-size: 1.4rem;
-    color: #818181;
+    font-size: 1.1rem;
+    color: light-dark(var(--light-color-index-alert-container2),var(--dark-color-index-alert-container2));
     margin-bottom: 0.6rem;
 }
 
 .index-alert-container .index-alert-container__row span:nth-of-type(2) {
-    font-size: 1.6rem;
-    color: #292929;
+    font-size: 1.5rem;
+    color: light-dark(var(--light-color-index-alert-container3),var(--dark-color-index-alert-container3));
     white-space: pre-wrap;
 }
 
@@ -820,7 +873,7 @@ label {
 }
 
 .success-modal button {
-    background: #464646;
+    background: light-dark(var(--light-color-success-modal),var(--dark-color-success-modal));
     color: #FFF;
     border: none;
     padding: 1rem 3.4rem;
@@ -878,7 +931,7 @@ label {
 }
 
 .email-updates-modal > form > button {
-    background: #464646;
+    background: light-dark(var(--light-color-success-modal),var(--dark-color-success-modal));
     color: #FFF;
     border: none;
     padding: 1rem 3.4rem;
@@ -901,7 +954,7 @@ label {
 }
 
 .history-container h2 {
-    color: #424242;
+    color: light-dark(var(--light-color-history-container-h2),var(--dark-color-history-container-h2));
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -913,7 +966,7 @@ label {
 }
 
 .history-container .admin-nav-header span {
-    color: #000;
+    color: light-dark(var(--light-color-history-container-span),var(--dark-color-history-container-span));
     font-size: 1.2rem;
     font-weight: 400;
 }
@@ -925,7 +978,7 @@ label {
 .history-container h3 {
     font-weight: 500;
     font-size: 1.4rem;
-    color: #464646;
+    color: light-dark(var(--light-color-history-container-h3),var(--dark-color-history-container-h3));
     margin-bottom: 2.0rem;
     margin-top: 0;
 }
@@ -984,7 +1037,7 @@ label {
     border: 1px solid #E6E6E6;
     background-color: #ffffff;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    color: #606060;
+    color: light-dark(var(--light-color-admin-index-link-container-a),var(--dark-color-admin-index-link-container-a));
     font-size: 1.6rem;
     font-weight: 500;
     display: flex;
@@ -1022,7 +1075,7 @@ label {
 .auth-dialog {
     width: 100%;
     max-width: 32.5rem;
-    color: #464646;
+    color: light-dark(var(--light-color-auth-dialog),var(--dark-color-auth-dialog));
 }
 
 
@@ -1056,7 +1109,7 @@ label {
 
 .auth-dialog button, .auth-dialog-continue {
     border-radius: 0.4rem;
-    background: #464646;
+    background: light-dark(var(--light-color-auth-dialog),var(--dark-color-auth-dialog));
     color: #FFFFFF;
     font-weight: 600;
     padding: 0.75rem;
@@ -1071,7 +1124,7 @@ label {
 }
 
 .auth-dialog p {
-    color: #606060;
+    color: light-dark(var(--light-color-auth-dialog),var(--dark-color-auth-dialog));
     font-size: 1.4rem;
     margin-bottom: 2.4rem;
 }
@@ -1156,7 +1209,7 @@ label {
     border-radius: 0.6rem;
     padding: 3.6rem;
     border: 1px solid #e6e6e6;
-    background-color: #fefefe;
+    background-color: light-dark(var(--light-bg-color-entity-empty-state),var(--dark-bg-color-entity-empty-state));
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.02);
 }
 
@@ -1177,7 +1230,7 @@ label {
 }
 
 .entity-empty-state span {
-    color: #424242;
+    color: light-dark(var(--light-bg-color-entity-empty-state-span),var(--dark-bg-color-entity-empty-state-span));
     text-align: center;
     font-size: 1.6rem;
     font-weight: 500;
@@ -1198,7 +1251,7 @@ label {
     align-items: center;
     justify-content: center;
     border-radius: 0.4rem;
-    background: #464646;
+    background: light-dark(var(--light-bg-color-entity-empty-state-action),var(--dark-bg-color-entity-empty-state-action));
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     color: #FFF;
     text-align: center;
@@ -1274,7 +1327,7 @@ label {
 
 
 .services-container > div > div > span {
-    color: #606060;
+    color: light-dark(var(--light-color-services-container ),var(--dark-color-services-container));
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -1304,8 +1357,8 @@ label {
 
 .services-container .modal {
     border-radius: 1.2rem;
-    border: 1px solid #E6E6E6;
-    background: #FFF;
+    border: 1px solid light-dark(#000,#E6E6E6);
+    background: light-dark(#FFF,#313131);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.10);
     padding: 2.8rem;
 }
@@ -1316,7 +1369,7 @@ label {
 }
 
 .services-container .modal span {
-    color: #2D2D2D;
+    color: light-dark(#2D2D2D,#313131);
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -1344,12 +1397,12 @@ label {
 
 .services-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .services-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background:light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -1364,7 +1417,7 @@ label {
 
 .create-service-container form button[type="submit"] {
     border-radius: 0.4rem;
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFFFFF;
     font-weight: 600;
     padding: 0.75rem 3.8rem;
@@ -1439,7 +1492,7 @@ label {
 }
 
 .alerts-container > a > span:first-of-type {
-    color: #606060;
+    color: light-dark(#606060,#969696);
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -1468,9 +1521,9 @@ label {
 }
 
 .alert-services h2 {
-    font-weight: 500;
-    font-size: 1.4rem;
-    color: #464646;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: light-dark(#464646,#BAABA8); 
     margin-bottom: 0.6rem;
     margin-top: 0;
 }
@@ -1484,14 +1537,14 @@ label {
 .alert-services > div > span {
     font-weight: 400;
     font-size: 1.4rem;
-    color: #595959;
+    color: light-dark(#595959,#989898);
 }
 
 
 .alert-container-messages h2 {
-    font-weight: 500;
-    font-size: 1.4rem;
-    color: #464646;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: light-dark(#464646,#BAABA8); 
     margin: 0;
 }
 
@@ -1505,7 +1558,7 @@ label {
 .alert-container-messages > div:first-child a {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
-    background: #FBFBFB;
+    background: light-dark(#FBFBFB,#b6b4b4);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     display: flex;
 }
@@ -1514,7 +1567,7 @@ label {
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.4rem;
-    color: #595959;
+    color: light-dark(#595959,#000000);
 }
 
 .alert-container-messages > div:nth-of-type(2) {
@@ -1536,8 +1589,8 @@ label {
 }
 
 .alert-container-messages > div:nth-of-type(2) > div > div > span {
-    color: #D0D0D0;
-    font-size: 1.2rem;
+    color: light-dark(#D0D0D0,#969696);
+    font-size: 1rem;
 }
 
 .alert-container-messages > div:nth-of-type(2) > div > div {
@@ -1554,13 +1607,13 @@ label {
 }
 
 .alert-container-messages .menu svg {
-    width: 1.2rem;
-    height: 1.2rem;
-    color: #595959;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: light-dark(#595959,#FFF);
 }
 
 .alert-container-messages > div:nth-of-type(2) > div > span {
-    color: #606060;
+    color: light-dark(#606060,#D0D0D0);
     font-size: 1.4rem;
     white-space: pre-wrap;
 }
@@ -1576,8 +1629,8 @@ label {
     position: absolute;
     border-radius: 0.4rem;
     border: 1px solid #E6E6E6;
-    background: #FFF;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    background: light-dark(#FFF,#404040);
+    /* box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05); */
     flex-direction: column;
     top: 100%;
     left: 50%;
@@ -1600,11 +1653,11 @@ label {
 }
 
 .menu > dialog > button, .menu > dialog > a {
-    color: #606060;
+    color: light-dark(#606060,#c5c5c5);
     font-size: 1.2rem;
     font-weight: 500;
     border: none;
-    background: white;
+    background: light-dark(#fff,#3f3f3f);
     text-align: left;
     transition: background-color 0.06s ease-in;
     padding: 1.4rem 2rem;
@@ -1673,12 +1726,12 @@ label {
 
 .alert-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA);
     background-color: white;
 }
 
 .alert-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background:light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -1718,7 +1771,7 @@ label {
 
 .create-monitor-container form button[type="submit"] {
     border-radius: 0.4rem;
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFFFFF;
     font-weight: 600;
     padding: 0.75rem 3.8rem;
@@ -1750,7 +1803,7 @@ label {
 
 .create-monitor-container .request-body div div {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
     padding: 0.4rem 0.6rem;
     font-size: 1.2rem;
@@ -1825,7 +1878,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #606060;
+        color: light-dark(#606060,#969696); 
     font-weight: 400;
     position: relative;
     margin-right: 1.2rem;
@@ -1874,6 +1927,7 @@ label {
     font-size: 1.4rem;
     font-weight: 500;
     margin: 0;
+    color: #c9c9c9;
 }
 
 .notification-mail-groups-group {
@@ -1888,7 +1942,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #606060;
+    color: light-dark(#606060,#969696); 
     font-weight: 400;
     position: relative;
     margin-right: 1.2rem;
@@ -1974,7 +2028,7 @@ label {
 }
 
 .monitors-container > a div > span:first-of-type {
-    color: #606060;
+    color: light-dark(#606060,#969696); 
     font-size: 1.4rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
@@ -2053,7 +2107,7 @@ label {
 .monitor-container h3 {
     font-weight: 500;
     font-size: 1.4rem;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     margin: 0;
 }
 
@@ -2100,12 +2154,12 @@ label {
 
 .monitor-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .monitor-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -2158,7 +2212,7 @@ label {
 }
 
 .monitor-logs-container span {
-	color: #606060;
+	color: light-dark(#606060,#969696); 
 	font-size: 1.4rem;
 	font-weight: 500;
 }
@@ -2269,14 +2323,14 @@ label {
 .notification-channels-header h2 {
     font-weight: 500;
     font-size: 1.4rem;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     margin: 0;
 }
 
 .notification-channels-header a {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
-    background: #FBFBFB;
+    background: light-dark(#FBFBFB,#686868);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     display: flex;
 }
@@ -2285,7 +2339,7 @@ label {
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.4rem;
-    color: #595959;
+    color: light-dark(#595959,#b4b4b4);
 }
 
 .notifications-list {
@@ -2349,7 +2403,7 @@ label {
 }
 
 .notifications-list > * > div > div > span:first-of-type {
-    color: #606060;
+    color: light-dark(#606060,#969696); 
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -2414,12 +2468,12 @@ label {
 
 .notifications-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .notifications-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -2438,7 +2492,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #606060;
+    color: light-dark(#606060,#969696); 
     font-weight: 400;
     position: relative;
     margin-right: 1.2rem;
@@ -2524,7 +2578,7 @@ label {
 .slack-container p {
     margin-top: 0;
     font-size: 1.4rem;
-    color: #606060;
+    color: light-dark(#606060,#969696); 
 }
 
 .help {
@@ -2567,7 +2621,7 @@ label {
     padding: 0.8rem 1.4rem;
     font-weight: 500;
     font-size: 1.4rem;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     text-decoration: none;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
 }
@@ -2711,7 +2765,7 @@ label {
     padding: 1.2rem;
     white-space: pre-wrap;
     font-size: 1.4rem;
-    color: #606060;
+    color: light-dark(#606060,#969696); 
 }
 
 .update-container .modal {
@@ -2760,12 +2814,12 @@ label {
 
 .update-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .update-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background:light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -2825,7 +2879,7 @@ label {
 }
 
 #update-overlay button {
-    background-color: #464646;
+    background-color: light-dark(#464646,#BAABA8);
     padding: 0.75rem 3.8rem;
     color: white;
     border: none;
@@ -2861,14 +2915,14 @@ label {
     border: none;
     background-color: transparent;
     padding: 0;
-    color: black;
+    color: light-dark(#000,#e7e7e7);
     box-shadow: none;
     margin-bottom: 0;
 }
 .settings-container .edit-button {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
-    background-color: #FBFBFB;
+    background-color: light-dark(#FBFBFB,#525252);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     display: none;
     padding: 0;
@@ -2878,7 +2932,7 @@ label {
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.4rem;
-    color: #595959
+    color: light-dark(#595959,#d8d5d5);
 }
 
 .settings-container .confirm-button {
@@ -2952,7 +3006,7 @@ label {
 .settings-container h3 {
     font-size: 1.4rem;
     font-weight: 500;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     margin: 0;
 }
 
@@ -2966,7 +3020,7 @@ label {
 .settings-users-header h2 {
     font-weight: 500;
     font-size: 1.4rem;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     margin: 0;
 }
 
@@ -2978,7 +3032,7 @@ label {
 .settings-users-header > a {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
-    background: #FBFBFB;
+    background: light-dark(#FBFBFB,#888686);
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     display: flex;
     padding: 0;
@@ -2988,7 +3042,7 @@ label {
     width: 1.2rem;
     height: 1.2rem;
     padding: 0.4rem;
-    color: #595959;
+    color: light-dark(#595959,#c3c1c1);
 }
 
 .settings-users-header dialog {
@@ -3042,7 +3096,7 @@ label {
 }
 
 .users-container > div > div > span {
-    color: #606060;
+        color: light-dark(#606060,#969696); 
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -3112,12 +3166,12 @@ label {
 
 .users-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .users-container .modal > form button:nth-of-type(2) {
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -3155,7 +3209,7 @@ label {
 .modal.secrets-modal > div svg {
     width: 1.8rem;
     height: 1.8rem;
-    color: #969696;
+    color: light-dark(#606060,#969696); 
 }
 
 .modal.secrets-modal span {
@@ -3181,14 +3235,14 @@ label {
 }
 
 .modal.secrets-modal > form > div:last-of-type > button:first-of-type {
-    background: #464646;
+    background:light-dark(#464646,#BAABA8);#BAABA8;
     color: #FFF;
     border: none;
 }
 
 .modal.secrets-modal > form button:nth-of-type(2) {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
@@ -3388,12 +3442,12 @@ label {
 
 .generate-new-webhook-secret.modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: #464646;
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
 .generate-new-webhook-secret.modal > form button:nth-of-type(2) {
-    background: #464646;
+    background:light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -3419,7 +3473,7 @@ label {
 
 .unsubscribe button {
     border-radius: 0.4rem;
-    background: #464646;
+    background: light-dark(#464646,#BAABA8);
     color: #FFFFFF;
     font-weight: 600;
     padding: 0.75rem 3.8rem;
