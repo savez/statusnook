@@ -577,6 +577,16 @@ func parseTmpl(name string, markup string) (*template.Template, error) {
 								</div> 
 								{{if .Ctx.Index}}
 									<div>
+									<div>
+										<select id="theme-select">
+											<option value="light">
+													&#x2600; Light
+											</option>
+											<option value="dark">
+													&#x1F319; Dark
+											</option>
+										</select>
+									</div>
 										<div class="get-updates-container">
 											{{if or .HasEmailAlertChannel .HasSlackSetup}}
 												<button class="get-updates">
