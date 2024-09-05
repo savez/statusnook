@@ -1,16 +1,14 @@
 :root{
   /* light styles here */
-  color-scheme: var(--color-scheme, light);
-    
-  &:has(#theme-select option[value="dark"]:checked) {
-    --color-scheme: dark;
-  }
+    color-scheme: var(--color-scheme, light);
+        
+    &:has(#theme-select option[value="dark"]:checked) {
+        --color-scheme: dark;
+    }
 
-  &:has(#theme-select option[value="light"]:checked) {
-    --color-scheme: light;
-  }
-
-    color-scheme:  var(--color-scheme, light);
+    &:has(#theme-select option[value="light"]:checked) {
+        --color-scheme: light;
+    }
 
     /* dark */
     --dark-bg-color: #212121;
@@ -578,7 +576,7 @@ label {
 .nav > a {
     font-size: 1.6rem;
     font-weight: 500;
-        color: light-dark(#606060,#969696); 
+    color: light-dark(#606060,#969696); 
     margin-left: 3.6rem;
     text-decoration: none;
 }
@@ -601,7 +599,7 @@ label {
 }
 
 .nav svg {
-        color: light-dark(#606060,#969696); 
+    color: light-dark(#606060,#969696); 
     width: 1.2rem;
 }
 
@@ -1750,7 +1748,7 @@ label {
 
 .alert-container .modal > form button:first-of-type {
     border: 1px solid #E6E6E6;
-    color: light-dark(#464646,#BAABA);
+    color: light-dark(#464646,#BAABA8);
     background-color: white;
 }
 
@@ -1902,7 +1900,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-        color: light-dark(#606060,#969696); 
+    color: light-dark(#606060,#969696); 
     font-weight: 400;
     position: relative;
     margin-right: 1.2rem;
@@ -2338,10 +2336,10 @@ label {
 
 /* notifications */
 .notification-channels-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.0rem;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.0rem;
+    align-items: center;
 }
 
 .notification-channels-header h2 {
@@ -2735,13 +2733,13 @@ label {
 }
 
 .new-update-title > button::before {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   top: 0px;
-   left: 0px;
-   background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.0) 50%);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.0) 50%);
 }
 
 .new-update-title > button::after {
@@ -2759,7 +2757,7 @@ label {
     z-index: 1;
     position: relative;
 }
-  
+
 .new-update-details {
     display: flex;
     align-items: center;
@@ -2770,7 +2768,7 @@ label {
 .new-update-details > div {
     display: flex;
     align-items: center;
- }
+}
 
 .new-update-details svg {
     width: 1.4rem;
@@ -2913,11 +2911,11 @@ label {
 }
 
 #update-overlay button span {
-  z-index: 1;
-  position: relative;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: white;
+    z-index: 1;
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: white;
 }
 /* update */
 
@@ -2976,16 +2974,16 @@ label {
 }
 
 .settings-container .edit-row .confirm-button, .settings-container .edit-row .cancel-button  {
-   display: none;
-   border-radius: 0.5rem;
-   border: 1px solid #E6E6E6;
-   background-color: #FBFBFB;
-   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-   padding: 0;
-   margin-left: 1.0rem;
-   padding: 0 2.0rem;
-   align-items: center;
-   color: #595959;
+    display: none;
+    border-radius: 0.5rem;
+    border: 1px solid #E6E6E6;
+    background-color: #FBFBFB;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    margin-left: 1.0rem;
+    padding: 0 2.0rem;
+    align-items: center;
+    color: #595959;
 }
 
 .settings-container .edit-row input:not(:disabled) + .edit-button + .confirm-button {
@@ -3040,7 +3038,7 @@ label {
     margin-bottom: 2.0rem;
     align-items: center;
 }
-  
+
 .settings-users-header h2 {
     font-weight: 500;
     font-size: 1.4rem;
@@ -3052,7 +3050,7 @@ label {
     display: flex;
     align-items: center;
 }
-  
+
 .settings-users-header > a {
     border-radius: 0.5rem;
     border: 1px solid #E6E6E6;
@@ -3120,7 +3118,7 @@ label {
 }
 
 .users-container > div > div > span {
-        color: light-dark(#606060,#969696); 
+    color: light-dark(#606060,#969696); 
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -3259,7 +3257,7 @@ label {
 }
 
 .modal.secrets-modal > form > div:last-of-type > button:first-of-type {
-    background:light-dark(#464646,#BAABA8);#BAABA8;
+    background:light-dark(#464646,#BAABA8);
     color: #FFF;
     border: none;
 }
@@ -3323,7 +3321,7 @@ label {
 }
 
 .secrets-modal form input {
-   margin: 0;
+    margin: 0;
 }
 
 .save-overlay {
