@@ -498,6 +498,29 @@ func parseTmpl(name string, markup string) (*template.Template, error) {
 				<link rel="stylesheet" href="/static/main.css">
 				<script type="text/javascript" src="/static/htmx-1.9.12.js"></script>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<script type="text/javascript">
+					/* Theme selector */
+					function handleSelectChange(event) {
+						console.log('handleSelectChange');
+						localStorage.setItem("themeSelect", document.getElementById("theme-select").value);
+					}
+
+					function reRenderTheme(){
+						const themeSelect = localStorage.getItem("themeSelect");
+						console.log(themeSelect);
+
+						if (themeSelect == 'dark') {
+							document.getElementById("theme-select-dark").selected=true;
+						} else {
+							document.getElementById("theme-select-light").selected=true;
+							localStorage.setItem("themeSelect", 'light');
+						}
+					}
+
+					document.addEventListener('DOMContentLoaded', function(){
+						reRenderTheme();
+					});
+				</script>
 			</head>
 			<body hx-history="false">
 				<div class="root">
@@ -518,6 +541,18 @@ func parseTmpl(name string, markup string) (*template.Template, error) {
 							<div class="status-header">
 								<div>
 									<a id="nook-name" href="/" hx-boost="true">{{.Ctx.Name}}</a>
+
+									<div class="nav-theme-select">
+										<select onchange="handleSelectChange(this)" id="theme-select">
+											<option id="theme-select-light" value="light">
+													&#x2600; Light
+											</option>
+											<option id="theme-select-dark" value="dark">
+													&#x1F319; Dark
+											</option>
+										</select>
+									</div>
+
 									{{if .Ctx.AdminArea}}
 										<input id="nav-toggle" type="checkbox">
 										<label for="nav-toggle">
@@ -577,16 +612,6 @@ func parseTmpl(name string, markup string) (*template.Template, error) {
 								</div> 
 								{{if .Ctx.Index}}
 									<div>
-									<div>
-										<select id="theme-select">
-											<option value="light">
-													&#x2600; Light
-											</option>
-											<option value="dark">
-													&#x1F319; Dark
-											</option>
-										</select>
-									</div>
 										<div class="get-updates-container">
 											{{if or .HasEmailAlertChannel .HasSlackSetup}}
 												<button class="get-updates">
@@ -695,6 +720,10 @@ func parseTmpl(name string, markup string) (*template.Template, error) {
 						if (!evt.detail.shouldSwap) {
 							evt.detail.shouldSwap = evt.detail.xhr.status === 400;
 						}
+					});
+
+					document.body.addEventListener("htmx:afterSwap", function(evt) {
+						reRenderTheme();
 					});
 
 					document.body.addEventListener("htmx:configRequest", function(evt) {

@@ -58,6 +58,11 @@
     
 }
 
+
+.nav-theme-select{
+    margin-left:1em;
+}
+
 #theme-select {
     display: flex;
     align-items: center;
